@@ -1,0 +1,29 @@
+1 导入库
+from bs4 import BeautifulSoup
+
+2.实例化对象
+本地文件：
+html_text=open("./test.html","r",encoding="utf-8")  
+爬取的文本：
+html_text=response.text
+
+soup=BeautifulSoup(html.text,"html.parser")
+
+3.数据解析的方法和属性：
+-find 返回的是节点对象
+    soup.find("div",classname_="value")
+-find_all 返回的是列表,返回所有符合的标签
+    soup.find_all("div",classname_="value")   
+-select 层级选择器  返回的是列表
+    定位：
+    soup.select("tang>ul>li>a")  >表示一个层级，定位到a节点
+    soup.select("tang.content>ul>li>a") .content 表示tang节点属性为content的节点
+    soup.select("tang#123>ul>li>a") #123 表示tang节点ID为123的节点
+    取值文本数据：
+    soup_content.string  获取目标节点下的文本，必须是当前节点的文本，有层级关系取不到
+    soup_content.text   获取目标节点下所有的文本内容  
+    取标签中的文本：
+    soup_content.attrs['href'] 取出目标标签中，href属性的文本
+4.持久化存储
+with open(path,"w",encoding="utf-8") as f:
+    f.write(content)

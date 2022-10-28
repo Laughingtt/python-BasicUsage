@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Hello World</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>696</x>
+      <y>260</y>
+      <width>93</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>按钮</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit">
+    <property name="geometry">
+     <rect>
+      <x>497</x>
+      <y>262</y>
+      <width>171</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>填写内容后回车生效</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>11</x>
+      <y>11</y>
+      <width>216</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Hello Wolrd                </string>
+    </property>
+   </widget>
+   <widget class="QGraphicsView" name="graphicsView">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>40</y>
+      <width>256</width>
+      <height>192</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-image:url(:/new/Desktop/图片/little_pig.jpg);</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_2">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>410</y>
+      <width>93</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>关闭页面</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>菜单</string>
+    </property>
+    <addaction name="action1"/>
+    <addaction name="action2"/>
+    <addaction name="separator"/>
+    <addaction name="action3"/>
+    <addaction name="action4"/>
+   </widget>
+   <widget class="QMenu" name="menu_2">
+    <property name="title">
+     <string>打开</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menu_3">
+    <property name="title">
+     <string>关闭</string>
+    </property>
+   </widget>
+   <addaction name="menu"/>
+   <addaction name="menu_2"/>
+   <addaction name="menu_3"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="action1">
+   <property name="text">
+    <string>1</string>
+   </property>
+  </action>
+  <action name="action2">
+   <property name="text">
+    <string>2</string>
+   </property>
+  </action>
+  <action name="action3">
+   <property name="text">
+    <string>3</string>
+   </property>
+  </action>
+  <action name="action4">
+   <property name="text">
+    <string>4</string>
+   </property>
+  </action>
+ </widget>
+ <resources>
+  <include location="../new.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>pushButton_2</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>246</x>
+     <y>443</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>310</x>
+     <y>417</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
