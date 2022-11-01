@@ -10,23 +10,31 @@
 """
 import ray
 import time
+import hashlib
 
 ray.init()
 
-
+count = 10000
 # Define the square task.
 @ray.remote
-def square(x):
-    c = 0
-    for i in range(100000000):
-        c = c + i
-    return c
+def hash1():
+    for i in range(count):
+        hashlib.sha256(str(i).encode("utf-8"))
+    return
 
 
+def hash2():
+    for i in range(count):
+        hashlib.sha256(str(i).encode("utf-8"))
+    return
+
+
+t0 = time.time()
+# Retrieve results.
+print(hash2())
+print("python ",time.time() - t0)
 # Launch four parallel square tasks.
 t0 = time.time()
-futures = [square.remote(i) for i in range(4)]
-
 # Retrieve results.
-print(ray.get(futures))
-print(time.time() - t0)
+print(ray.get(hash1.remote()))
+print("ray ",time.time() - t0)

@@ -32,3 +32,5 @@ matrix_ref = ray.put(np.ones((1000, 1000)))
 # Call the task with the object reference as an argument.
 print(ray.get(sum_matrix.remote(matrix_ref)))
 # -> 1000000.0
+
+ray.put()
