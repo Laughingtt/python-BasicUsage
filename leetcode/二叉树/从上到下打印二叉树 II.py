@@ -22,6 +22,7 @@
   [15,7]
 ]
 """
+import collections
 
 
 class TreeNode:
@@ -47,8 +48,37 @@ class Solution:
 
         insert_tree_tree(0, root, tree_list)
 
+    # DFS
+    def levelOrder2(self, root: TreeNode):
+        if root is None:
+            return []
+        tree_list = []
+        level = 0
+        queue = collections.deque()
+        queue.append(root)
+        tmp = []  # tmp实用来存放下一层的数据
+        while queue:
+            if level >= len(tree_list):
+                tree_list.append([])
+            node = queue.popleft()
+            tree_list[level].append(node.val)
+
+            if node.left is not None:
+                tmp.append(node.left)
+            if node.right is not None:
+                tmp.append(node.right)
+
+            if queue.__len__() <= 0:  # 来判断是否可以进入下一层的level
+                level += 1
+                for t in tmp:
+                    queue.append(t)
+                tmp = []
+
+        return tree_list
+
 
 if __name__ == '__main__':
     s = Solution()
-    tree = TreeNode(3, left=TreeNode(9), right=TreeNode(20, left=TreeNode(15), right=TreeNode(7)))
-    s.levelOrder(tree)
+    # tree = TreeNode(3, left=TreeNode(9), right=TreeNode(20, left=TreeNode(15), right=TreeNode(7)))
+    tree = TreeNode(1, left=TreeNode(2, left=TreeNode(4), right=TreeNode(5)), right=TreeNode(3))
+    print(s.levelOrder2(tree))
