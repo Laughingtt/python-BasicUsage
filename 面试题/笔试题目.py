@@ -3,9 +3,6 @@
 
 """
 @company:UDAI
-@file:笔试题目.py
-@time:2021/06/30
-
 """
 
 """
@@ -49,7 +46,7 @@ Partitions = 8
 class Test3:
 
     @staticmethod
-    def id_create(count1=int(5e7)):
+    def id_create(count1=int(1e7)):
         import numpy as np
         import datatable as dt
         dt.Frame({"id": np.arange(count1)}).to_csv("id_{}.csv".format(count1))
@@ -79,7 +76,7 @@ class Test3:
 
 
 """
-4. Alice拥有2亿用户的数据，Bob拥有1亿用户数据，假设两方的数据id为自然数，对Alice和Bob方的数据求交集
+4. Alice拥有2千万用户的数据，Bob拥有1千万用户数据，假设两方的数据id为自然数，对Alice和Bob方的数据求交集
    可使用并发对数据进行高效处理，要求在本机电脑可以正常执行。
 """
 
@@ -87,7 +84,7 @@ class Test3:
 class Test4:
 
     @staticmethod
-    def id_create(count1=int(2e8), count2=int(1e8)):
+    def id_create(count1=int(2e7), count2=int(1e7)):
         import numpy as np
         import datatable as dt
         dt.Frame({"id": np.arange(count1)}).to_csv("id_{}.csv".format(count1))
