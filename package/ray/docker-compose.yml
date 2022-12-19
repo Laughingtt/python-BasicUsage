@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+
+  secretflow:
+    container_name: secretflow
+    image: secretflow/secretflow-anolis8:0.7.7b1
+    network_mode: host
+    volumes:
+      - ./logs:/app/logs
+    security_opt:
+      - seccomp:unconfined
+    restart: on-failure
+    command: [ "sleep","infinity" ]

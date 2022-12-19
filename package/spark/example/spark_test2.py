@@ -9,7 +9,6 @@
 
 """
 from pyspark import SparkContext, SparkConf
-from pyspark.sql import SparkSession
 
 
 def create_sc():

@@ -35,6 +35,7 @@ def hash2():
 def hash3(i):
     hashlib.sha256(str(i).encode("utf-8"))
 
+
 t0 = time.time()
 # Retrieve results.
 print(hash2())

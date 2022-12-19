@@ -53,7 +53,20 @@ class Run(object):
 
         # 8.3s
 
+    def encrypt_single_thread(self):
+        t = Test()
+        pubk, prik = t.gen_pubk()
+        task = []
+        t0 = time.time()
+        for i in range(1000):
+            task.append(pubk.encrypt(i))
+
+        print("encrypt_test func time is {}".format(time.time() - t0))
+
+        # 160s
+
 
 if __name__ == '__main__':
     r = Run()
     r.encrypt_test()
+    r.encrypt_single_thread()

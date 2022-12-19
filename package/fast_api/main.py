@@ -5,7 +5,7 @@
 # ide： PyCharm
 import time
 from fastapi import FastAPI, Cookie, Header, Form
-from fastapi import File, UploadFile,Request
+from fastapi import File, UploadFile, Request
 from enum import Enum
 from typing import Union, List
 from pydantic import BaseModel, Field
@@ -118,6 +118,7 @@ async def main():
 </body>
     """
     return HTMLResponse(content=content)
+
 
 @app.middleware("http")
 async def add_process_time_header(request: Request, call_next):

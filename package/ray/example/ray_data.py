@@ -32,4 +32,6 @@ def pandas_transform(df: pd.DataFrame) -> pd.DataFrame:
 
 
 # 设置batch_size ,会根据100一批并行的运行
-ds.map_batches(pandas_transform, batch_size=100)
+res = ds.map_batches(pandas_transform, batch_size=100)
+
+print(res)
