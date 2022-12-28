@@ -28,7 +28,9 @@ def run():
 
         # 客户端必须使用定义好的类型，这里是HelloRequest类型
         response = stub.SayHello(HelloRequest(name='eric'))
+        response2 = stub.SayHelloAgain(HelloRequest(name='eric'))
     print("hello client received: " + response.message)
+    print("hello client received: " + response2.message)
 
 
 if __name__ == "__main__":

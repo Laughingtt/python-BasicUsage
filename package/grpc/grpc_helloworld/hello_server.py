@@ -28,6 +28,10 @@ class Hello(HelloWorldServiceServicer):
         print("hello {}".format(request))
         return HelloReply(message='Hello, %s!' % request.name)
 
+    def SayHelloAgain(self, request, context):
+        print("hello again {}".format(request))
+        return HelloReply(message='Hello, again %s!' % request.name)
+
 
 def serve():
     # 这里通过thread pool来并发处理server的任务

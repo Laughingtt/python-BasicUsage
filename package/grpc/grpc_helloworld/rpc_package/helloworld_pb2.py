@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='rpc_package',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\x10helloworld.proto\x12\x0brpc_package\"\x1c\n\x0cHelloRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\"\x1d\n\nHelloReply\x12\x0f\n\x07message\x18\x01 \x01(\t2U\n\x11HelloWorldService\x12@\n\x08SayHello\x12\x19.rpc_package.HelloRequest\x1a\x17.rpc_package.HelloReply\"\x00\x62\x06proto3')
+  serialized_pb=_b('\n\x10helloworld.proto\x12\x0brpc_package\"\x1c\n\x0cHelloRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\"\x1d\n\nHelloReply\x12\x0f\n\x07message\x18\x01 \x01(\t2\x9c\x01\n\x11HelloWorldService\x12@\n\x08SayHello\x12\x19.rpc_package.HelloRequest\x1a\x17.rpc_package.HelloReply\"\x00\x12\x45\n\rSayHelloAgain\x12\x19.rpc_package.HelloRequest\x1a\x17.rpc_package.HelloReply\"\x00\x62\x06proto3')
 )
 
 
@@ -113,13 +113,22 @@ _HELLOWORLDSERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=94,
-  serialized_end=179,
+  serialized_start=95,
+  serialized_end=251,
   methods=[
   _descriptor.MethodDescriptor(
     name='SayHello',
     full_name='rpc_package.HelloWorldService.SayHello',
     index=0,
+    containing_service=None,
+    input_type=_HELLOREQUEST,
+    output_type=_HELLOREPLY,
+    serialized_options=None,
+  ),
+  _descriptor.MethodDescriptor(
+    name='SayHelloAgain',
+    full_name='rpc_package.HelloWorldService.SayHelloAgain',
+    index=1,
     containing_service=None,
     input_type=_HELLOREQUEST,
     output_type=_HELLOREPLY,

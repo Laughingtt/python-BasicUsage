@@ -6,6 +6,9 @@ package rpc_package;
 service HelloWorldService {
     // define the interface and data type
     rpc SayHello (HelloRequest) returns (HelloReply) {}
+
+    // Sends another greeting
+    rpc SayHelloAgain (HelloRequest) returns (HelloReply) {}
 }
 
 // define the data type of request
