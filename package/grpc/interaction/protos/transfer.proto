@@ -1,0 +1,40 @@
+syntax = "proto3";
+package network;
+
+message Empty {
+  string content = 1;
+}
+
+message Party {
+  string partyId = 1;
+  string name = 2;
+}
+
+message Bytes {
+  bytes data = 1;
+}
+
+message RequestMeta {
+  string tag = 1;       // unique transfer tag for this job
+  Party src = 2;       // data source, also transfer initiator, data sender
+  Party dst = 3;      // data destination, data receiver
+}
+
+message Message {
+  oneof content {
+    Empty empty = 1;
+    Bytes bytes = 2;
+  }
+  RequestMeta request_meta = 3;
+}
+
+service TransferServer {
+  // 接收远程的请求数据
+  rpc recv (Message) returns (Empty);
+
+  // 发送数据到本地服务,本地服务再调其他服务recv
+  rpc send (Message) returns (Empty);
+
+  // 从本地服务获取数据
+  rpc get_local_server (RequestMeta) returns (Message);
+}
