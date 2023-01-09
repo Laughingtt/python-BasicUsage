@@ -2,7 +2,8 @@ import ray
 import time
 from phe import paillier
 
-ray.init(address="10.10.10.241:9937")
+# ray.init(address="10.10.10.241:9937")
+ray.init(address="127.0.0.1:9937")
 
 
 class Test:
@@ -69,4 +70,4 @@ class Run(object):
 if __name__ == '__main__':
     r = Run()
     r.encrypt_test()
-    r.encrypt_single_thread()
+    # r.encrypt_single_thread()

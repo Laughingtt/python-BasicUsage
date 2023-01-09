@@ -10,7 +10,7 @@
 """
 import ray
 
-ray.init()
+ray.init(address="127.0.0.1:9937")
 
 
 # Define the Counter actor.
@@ -31,7 +31,7 @@ c = Counter.remote()
 
 # Submit calls to the actor. These calls run asynchronously but in
 # submission order on the remote actor process.
-for _ in range(10):
+for _ in range(100000):
     c.incr.remote(1)
 
 # Retrieve final actor state.
